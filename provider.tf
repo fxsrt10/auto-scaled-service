@@ -1,4 +1,4 @@
 provider "aws" {
-  shared_credentials_file = "$HOME/.aws/credentials"
+  shared_credentials_file = "credentials"
   region = var.AWS_REGION
 }

@@ -5,17 +5,21 @@ resource "aws_launch_configuration" "autoscaleapp-launchconfig" {
     instance_type = "t2.micro"
     key_name = aws_key_pair.mykeypair.key_name
     security_groups = [aws_security_group.allow-ssh.id]
+    user_data       = file("install_docker.sh")
+    lifecycle {
+        create_before_destroy = true
+    }
 }
 resource "aws_autoscaling_group" "autoscaleapp-autoscalinggroup" {
   name = "autoscaleapp-autoscalinggroup"
   vpc_zone_identifier = [aws_subnet.main-public-1.id, aws_subnet.main-public-2.id]
   launch_configuration = aws_launch_configuration.autoscaleapp-launchconfig.name
-  min_size = 1
+  min_size = 2
   max_size = 3
   health_check_grace_period = 300
-  health_check_type = "EC2"
+  health_check_type = "ELB"
   force_delete = true
-
+  load_balancers = [aws_elb.autoscaleapp-elb.name]
   tag {
       key = "Name"
       value = "ec2 Instance"

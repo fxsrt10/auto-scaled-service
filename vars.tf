@@ -13,7 +13,7 @@ variable "AWS_SUBNET_3" {
 }
 
 variable "AMI" {
-    default = "ami-01d025118d8e760db"
+    default = "ami-085925f297f89fce1"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
