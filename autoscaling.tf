@@ -5,7 +5,7 @@ resource "aws_launch_configuration" "autoscaleapp-launchconfig" {
     instance_type = "t2.micro"
     key_name = aws_key_pair.mykeypair.key_name
     security_groups = [aws_security_group.allow-ssh.id]
-    user_data       = file("install_docker.sh")
+    user_data       = file("install_nginx.sh")
     lifecycle {
         create_before_destroy = true
     }
