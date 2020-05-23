@@ -32,3 +32,4 @@ terraform.tfvars
 
 mykey
 mykey.pub
+credentials
