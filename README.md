@@ -21,6 +21,8 @@ When you're ready to spin it down just put:
 
 Cloudwatch CPU Autoscale Trigger:
 You can ssh into the generated instance and run the following:
+
+
     sudo apt-get install stress
     stress --cpu 2 --timeout
 To generate autoscaling of instances!
