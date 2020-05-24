@@ -15,6 +15,9 @@ If you don't have a terraform distribution you can use the one provided(works wi
 
 When everything is up and running you should receive a DNS of the ELB to go to
 
+When you're ready to spin it down just put:
+
+    ./autoscaleapp.sh -d -dr
 
 ### Notes
 If you want to manually run terraform yourself you just need to run the following commands and provide a file labeled credentials and a private and public key pair named mykey and mykey.pub
