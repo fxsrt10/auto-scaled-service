@@ -19,6 +19,12 @@ When you're ready to spin it down just put:
 
     ./autoscaleapp.sh -d -dr
 
+Cloudwatch CPU Autoscale Trigger:
+You can ssh into the generated instance and run the following:
+    sudo apt-get install stress
+    stress --cpu 2 --timeout
+To generate autoscaling of instances!
+
 ### Notes
 If you want to manually run terraform yourself you just need to run the following commands and provide a file labeled credentials and a private and public key pair named mykey and mykey.pub
 
